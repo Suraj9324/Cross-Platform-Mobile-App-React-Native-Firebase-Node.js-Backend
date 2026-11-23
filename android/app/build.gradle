@@ -1,0 +1,31 @@
+// Android Build Configuration
+// Optimized for performance and reduced API response time
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0"
+
+    defaultConfig {
+        applicationId "com.yourapp.mobile"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Performance optimizations
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries true
+    }
+}
+
